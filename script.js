@@ -1,7 +1,10 @@
 const gameContainer = document.querySelector("#game-container");
 const setSizeButton = document.querySelector("#set-size");
+const rainbowToggle = document.querySelector("#rainbow-toggle");
+const rainbowText = document.querySelector("#current-rainbow-state");
 const GAMECONTAINERSIZE = 600;
 let gameBoxes;
+let rainbow = false;
 
 function initialGrid(){
     let boxSize = Math.floor((GAMECONTAINERSIZE / 16));
@@ -29,12 +32,26 @@ function customGrid(size){
 
 initialGrid();
 
+rainbowToggle.addEventListener("click", () => {
+    if(rainbow){
+        rainbow = false;
+        rainbowText.textContent = "Now set to Black"
+    }else{
+        rainbow = true;
+        rainbowText.textContent = "Now set to Rainbow"
+    }
+});
+
 function randomHsl() {
     return 'hsla(' + (Math.random() * 360) + ', 100%, 50%, 1)';
 }
 
 gameBoxes.forEach(function(element){
     element.addEventListener("mouseover", () => {
-        element.style.backgroundColor = "blue"
+        if(rainbow){
+            element.style.backgroundColor = randomHsl();
+        }else{
+            element.style.backgroundColor = "black";
+        }
     });
 });
