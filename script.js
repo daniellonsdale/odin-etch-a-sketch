@@ -1,6 +1,7 @@
 const gameContainer = document.querySelector("#game-container");
 const setSizeButton = document.querySelector("#set-size");
 const GAMECONTAINERSIZE = 600;
+let gameBoxes;
 
 function initialGrid(){
     let boxSize = Math.floor((GAMECONTAINERSIZE / 16));
@@ -11,6 +12,7 @@ function initialGrid(){
         box.classList.toggle("game-box");
         gameContainer.appendChild(box);
     }
+    gameBoxes = document.querySelectorAll(".game-box");
 }
 
 function customGrid(size){
@@ -22,6 +24,8 @@ function customGrid(size){
         box.classList.toggle("game-box");
         gameContainer.appendChild(box);
     }
+    gameBoxes = document.querySelectorAll(".game-box");
 }
 
 initialGrid();
+

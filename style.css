@@ -34,7 +34,7 @@ body{
  }
 
  .game-box{
-    border: 2px solid red;
+    border: 1px solid red;
     flex: 1 1 var(--gameBoxFlexBasis);
  }
 
