@@ -4,6 +4,15 @@
     padding: 0;
 }
 
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .noselect { 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -13,4 +22,16 @@
      user-select: none;
  } 
 
- 
+ #game-container{
+    width: 600px;
+    height: 600px;
+    border: 2px red solid;
+    display: flex;
+    flex-wrap: wrap;
+
+ }
+
+ .game-box{
+    border: 2px solid red;
+    flex: 1 1 146px;
+ }
