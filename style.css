@@ -31,10 +31,11 @@ body{
     height: 600px;
     display: flex;
     flex-wrap: wrap;
+    border: 1px red solid;
  }
 
  .game-box{
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     flex: 1 1 var(--gameBoxFlexBasis);
  }
 
