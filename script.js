@@ -42,6 +42,12 @@ rainbowToggle.addEventListener("click", () => {
     }
 });
 
+setSizeButton.addEventListener("click", () => {
+    let size = prompt("Choose grid size (1-100)");
+    //ADD REMOVE PREVIOUS GRID FUNCTION
+    customGrid(size);
+});
+
 function randomHsl() {
     return 'hsla(' + (Math.random() * 360) + ', 100%, 50%, 1)';
 }
