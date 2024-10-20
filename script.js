@@ -29,3 +29,8 @@ function customGrid(size){
 
 initialGrid();
 
+gameBoxes.forEach(function(element){
+    element.addEventListener("mouseover", () => {
+        element.style.backgroundColor = "blue"
+    });
+});
