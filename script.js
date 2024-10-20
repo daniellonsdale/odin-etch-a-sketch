@@ -78,9 +78,14 @@ function removePrev(){
 }
 
 setSizeButton.addEventListener("click", () => {
-    removePrev();
     let size = prompt("Choose grid size (1-100)");
-    customGrid(size);
+    size = Number(size);
+    if(size > 0 && size <= 100 && Number.isInteger(size)){
+        removePrev();
+        customGrid(size);
+    }else{
+        alert("Please use a valid input (Integers from 1-100)");
+    }
 });
 
 //Rainbow function
