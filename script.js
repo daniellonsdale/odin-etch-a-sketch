@@ -29,6 +29,10 @@ function customGrid(size){
 
 initialGrid();
 
+function randomHsl() {
+    return 'hsla(' + (Math.random() * 360) + ', 100%, 50%, 1)';
+}
+
 gameBoxes.forEach(function(element){
     element.addEventListener("mouseover", () => {
         element.style.backgroundColor = "blue"
