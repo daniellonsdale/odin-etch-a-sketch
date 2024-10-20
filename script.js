@@ -2,6 +2,7 @@ const gameContainer = document.querySelector("#game-container");
 const setSizeButton = document.querySelector("#set-size");
 const rainbowToggle = document.querySelector("#rainbow-toggle");
 const rainbowText = document.querySelector("#current-rainbow-state");
+const boardClear = document.querySelector("#board-clear");
 const GAMECONTAINERSIZE = 600;
 let gameBoxes;
 let rainbow = false;
@@ -62,6 +63,12 @@ rainbowToggle.addEventListener("click", () => {
         rainbow = true;
         rainbowText.textContent = "Now set to Rainbow"
     }
+});
+
+boardClear.addEventListener("click", () => {
+    gameBoxes.forEach(function(element){
+        element.style.backgroundColor = "";
+    });
 });
 
 function removePrev(){
