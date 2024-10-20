@@ -15,6 +15,9 @@ body{
     align-items: center;
     flex-direction: column;
     gap: 12px;
+    background-color: #F2E5BF;
+    color: #54473F;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .noselect { 
@@ -31,7 +34,8 @@ body{
     height: 600px;
     display: flex;
     flex-wrap: wrap;
-    border: 1px red solid;
+    border: 3px #257180 solid;
+    box-sizing: content-box;
  }
 
  .game-box{
@@ -52,5 +56,15 @@ body{
  }
 
  button{
-    padding: 2px 6px;
+    padding: 6px 6px;
+ }
+
+ #content-container{
+   background-color: #CBD2A4;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+   padding: 16px;
+   justify-content: center;
+   align-items: center;
  }

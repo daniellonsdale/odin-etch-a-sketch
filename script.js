@@ -16,6 +16,17 @@ function initialGrid(){
         gameContainer.appendChild(box);
     }
     gameBoxes = document.querySelectorAll(".game-box");
+
+    //Rainbow/black toggle
+    gameBoxes.forEach(function(element){
+        element.addEventListener("mouseover", () => {
+            if(rainbow){
+                element.style.backgroundColor = randomHsl();
+            }else{
+                element.style.backgroundColor = "black";
+            }
+        });
+    });
 }
 
 function customGrid(size){
@@ -28,6 +39,17 @@ function customGrid(size){
         gameContainer.appendChild(box);
     }
     gameBoxes = document.querySelectorAll(".game-box");
+
+    //Add event listeners back
+    gameBoxes.forEach(function(element){
+        element.addEventListener("mouseover", () => {
+            if(rainbow){
+                element.style.backgroundColor = randomHsl();
+            }else{
+                element.style.backgroundColor = "black";
+            }
+        });
+    });
 }
 
 initialGrid();
@@ -42,22 +64,19 @@ rainbowToggle.addEventListener("click", () => {
     }
 });
 
+function removePrev(){
+    gameBoxes.forEach(function(element){
+        gameContainer.removeChild(element);
+    });
+}
+
 setSizeButton.addEventListener("click", () => {
+    removePrev();
     let size = prompt("Choose grid size (1-100)");
-    //ADD REMOVE PREVIOUS GRID FUNCTION
     customGrid(size);
 });
 
+//Rainbow function
 function randomHsl() {
     return 'hsla(' + (Math.random() * 360) + ', 100%, 50%, 1)';
 }
-
-gameBoxes.forEach(function(element){
-    element.addEventListener("mouseover", () => {
-        if(rainbow){
-            element.style.backgroundColor = randomHsl();
-        }else{
-            element.style.backgroundColor = "black";
-        }
-    });
-});
