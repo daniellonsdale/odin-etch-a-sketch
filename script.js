@@ -24,5 +24,4 @@ function customGrid(size){
     }
 }
 
-//initialGrid();
-customGrid(50);
+initialGrid();
