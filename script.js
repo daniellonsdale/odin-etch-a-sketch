@@ -13,4 +13,16 @@ function initialGrid(){
     }
 }
 
-initialGrid();
+function customGrid(size){
+    let boxSize = Math.floor((GAMECONTAINERSIZE / size));
+    boxSize += "px";
+    document.body.style.setProperty("--gameBoxFlexBasis", boxSize);
+    for (let i = 0; i < size*size; i++){
+        let box = document.createElement("div");
+        box.classList.toggle("game-box");
+        gameContainer.appendChild(box);
+    }
+}
+
+//initialGrid();
+customGrid(50);
